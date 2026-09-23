@@ -27,3 +27,36 @@ function shuffle(array) {
         [array[i], array[j]] = [array[j], array[i]];
     }
 }
+
+
+
+
+function initGame() {
+    board.innerHTML = "";
+    resultDisplay.textContent = "";
+    moves = 0;
+    matchedCount = 0;
+    seconds = 0;
+    firstCard = null;
+    secondCard = null;
+    lockBoard = false;
+    
+    movesDisplay.textContent = `Coups: ${moves}`;
+    timerDisplay.textContent = `Temps: 00:00`;
+    
+    shuffle(cards);
+    
+    cards.forEach((imgUrl) => {
+        const card = document.createElement("div");
+        card.classList.add("card");
+        card.setAttribute("role", "button");
+        card.setAttribute("tabindex", "0");
+        card.dataset.value = imgUrl;
+        board.appendChild(card);
+        
+        card.addEventListener("click", () => handleCardClick(card));
+    });
+    
+    clearInterval(timerInterval);
+    startTimer();
+}
