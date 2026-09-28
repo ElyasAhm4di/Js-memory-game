@@ -111,3 +111,33 @@ function resetTurn() {
     secondCard = null;
     lockBoard = false;
 }
+
+
+
+
+function checkVictory() {
+    if (matchedCount === cards.length) {
+        stopTimer();
+        resultDisplay.textContent = `Victoire! Coups: ${moves} | Temps: ${formatTime(seconds)}`;
+    }
+}
+
+function startTimer() {
+    timerInterval = setInterval(() => {
+        seconds++;
+        timerDisplay.textContent = `Temps: ${formatTime(seconds)}`;
+    }, 1000);
+}
+
+function stopTimer() {
+    clearInterval(timerInterval);
+}
+
+function formatTime(sec) {
+    const min = String(Math.floor(sec / 60)).padStart(2, "0");
+    const s = String(sec % 60).padStart(2, "0");
+    return `${min}:${s}`;
+}
+
+restartBtn.addEventListener("click", initGame);
+initGame();
