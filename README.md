@@ -1,6 +1,6 @@
 # Projet de TD - Jeu de Memory en JavaScript
 
-[Lien direct vers le jeu jouable en ligne](https://elyasahm4di.github.io/js-memory-game/)
+[Lien direct vers le jeu jouable en ligne](https://elyasahm4di.github.io/Js-memory-game/)
 
 ## Le projet en quelques mots
 Ce dépôt contient mon rendu pour le TD de BUT Informatique 2A. Il s'agit d'un jeu de Memory classique, mais l'enjeu était avant tout de coder toute la logique en JavaScript pur. L'objectif principal était d'apprendre à bien séparer les données (ce qui se passe dans la mémoire du jeu) de l'affichage (le DOM).
